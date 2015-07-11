@@ -1,3 +1,8 @@
+'''File 1 of 3. Pulls weather info from cities via the API
+and converts to SQL database.
+'''
+
+
 import datetime
 import requests
 import pandas as pd
