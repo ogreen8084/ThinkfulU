@@ -46,7 +46,9 @@ along with the applicable year and the gdp for that year.
 get_info = {}
 for item in education_df.index:
 	if item in gdp_df.index:
-		get_info[item]=list([education_df.Year[item],education_df.Men[item], education_df.Women[item], gdp_df.ix[item][education_df.Year[item]]])
+		get_info[item]=list(
+			[education_df.Year[item],education_df.Men[item], education_df.Women[item],
+			gdp_df.ix[item][education_df.Year[item]]])
 
 #create list of women and men years of education and the log of the gdp
 gdp_list=[]
