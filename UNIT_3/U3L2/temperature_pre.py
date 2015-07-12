@@ -35,7 +35,8 @@ api_key='bd4b8c470ad5d5d9b79df6d89133dee4'
 
 while num_days <=29:
 	for key2, val2 in cities.iteritems():
-		url = 'https://api.forecast.io/forecast/%s/%s,%s' %(api_key, val2, start_date.strftime("%Y-%m-%dT%H:%M:%S"))
+		url = 'https://api.forecast.io/forecast/%s/%s,%s' %(api_key, \
+		val2, start_date.strftime("%Y-%m-%dT%H:%M:%S"))
 		r = requests.get(url)
 		temp = []
 		for item in r.json()['hourly']['data']:
