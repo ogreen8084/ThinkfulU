@@ -12,7 +12,8 @@ import numpy as np
 import pandas as pd
 
 #url to pull school demographic data from
-url = "http://web.archive.org/web/20110514112442/http://unstats.un.org/unsd/demographic/products/socind/education.htm"
+url = "http://web.archive.org/web/20110514112442/http://unstats.un.org/\
+	unsd/demographic/products/socind/education.htm"
 
 r= requests.get(url)
 
