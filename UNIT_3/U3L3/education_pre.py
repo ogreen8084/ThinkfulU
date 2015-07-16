@@ -1,4 +1,5 @@
 '''
+Changed where lines were too long.
 pulls data from website and converts table into dataframe.
 saves dataframe to csv.
 
@@ -12,8 +13,9 @@ import numpy as np
 import pandas as pd
 
 #url to pull school demographic data from
-url = "http://web.archive.org/web/20110514112442/http://unstats.un.org/\
-	unsd/demographic/products/socind/education.htm"
+url1 = "http://web.archive.org/web/20110514112442/http://unstats.un.org/"
+url2 = "unsd/demographic/products/socind/education.htm"
+url = url1 + url2
 
 r= requests.get(url)
 
