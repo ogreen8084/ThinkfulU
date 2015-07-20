@@ -1,3 +1,7 @@
+'''
+Just shortened lines.
+'''
+
 import pandas as pd
 import numpy as np 
 import matplotlib.pyplot as plt
@@ -6,13 +10,14 @@ from statsmodels.graphics.tsaplots import plot_acf
 from statsmodels.graphics.tsaplots import plot_pacf
 from statsmodels.tsa.arima_model import ARIMA
 
-df = pd.read_csv('LoanStats3b.csv', header=1, low_memory=False)
+df = pd.read_csv('LoanStats3d.csv', header=1, low_memory=False)
 
 # converts string to datetime object in pandas:
 df = df.dropna(subset= ['issue_d'])
 
 #dictionary created to deal with 
-month_dic = {'Jan':'01', 'Feb':'02', 'Mar':'03', 'Apr':'04','May':'05','Jun':'06','Jul':'07','Aug':'08','Sep':'09','Oct':'10','Nov':'11','Dec':'12'}
+month_dic = {'Jan':'01', 'Feb':'02', 'Mar':'03', 'Apr':'04','May':'05',
+'Jun':'06','Jul':'07','Aug':'08','Sep':'09','Oct':'10','Nov':'11','Dec':'12'}
 
 #convert date to a readable time for to_datetime in lists
 change_year = []
@@ -43,13 +48,15 @@ plt.show()
 
 
 #use regression formula to identify trend in loan counts over time
-est = smf.ols(formula = "loan_count_summary ~ loan_count_summary.index", data = loan_count_summary).fit()
+est = smf.ols(formula = "loan_count_summary ~ loan_count_summary.index", 
+	data = loan_count_summary).fit()
 
      
 print '\nThe data has the following regression parameters:'
 print 'The intercept is : %r' %(round(est.params[0], 2))
 print 'The slope is     : %r' %(round(est.params[1], 2))
-print '\nThe data set is not stationary. Consequently, the regression value will be subtracted from each data point'
+print '\nThe data set is not stationary. Consequently, the '\
+'regression value will be subtracted from each data point'
 
 #subtract regression line from loan count data to account for non-stationary data
 new_loan= []
@@ -70,7 +77,8 @@ loan_count_rev.plot()
 lcr = loan_count_summary.plot()
 lcr.set_xlabel('Time (1 unit is a Month)')
 lcr.set_ylabel('Loan Count')
-lcr.legend(['OLS Regression Line', 'Loan Count Detrended (Y-Regression Line)', 'Loan Count Raw Data'])
+lcr.legend(['OLS Regression Line', 'Loan Count Detrended (Y-Regression Line)', 
+	'Loan Count Raw Data'])
 plt.show()
 
 #plot auto-correlation and partial auto-correlation

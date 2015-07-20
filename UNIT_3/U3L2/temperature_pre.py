@@ -31,7 +31,7 @@ num_days = 0
 
 #list for dates to create index for database table
 date = []
-api_key='bd4b8c470ad5d5d9b79df6d89133dee4'
+api_key= #omitted
 
 while num_days <=29:
 	for key2, val2 in cities.iteritems():

@@ -1,8 +1,12 @@
+#pulled out site to make it easier to change sites
+
 import numpy as np 
 import pandas as pd
 import statsmodels.api as sm
 
-loansData = pd.read_csv('https://spark-public.s3.amazonaws.com/dataanalysis/loansData.csv')
+web_site = 'https://spark-public.s3.amazonaws.com/dataanalysis/loansData.csv'
+
+loansData = pd.read_csv(web_site)
 
 
 #lambda functions to clean data

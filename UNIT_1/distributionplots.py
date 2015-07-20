@@ -1,10 +1,15 @@
+'''
+Shortened line and re-did how list was created. 
+'''
+
 import collections
 import numpy as np 
 import scipy.stats as stats
 import matplotlib.pyplot as plt
 
 
-x = [1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 3, 4, 4, 4, 4, 5, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 9, 9]
+x = [1] * 8  +  [2] * 3 + [3] + [4] * 4 + [5] + [6] * 3
+x = x +[7] * 8 +[8] * 2 + [9] *2
 c = collections.Counter(x)
 
 print c

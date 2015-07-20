@@ -1,8 +1,12 @@
+#Made website a variable to make it easier to change sites
+
 import matplotlib.pyplot as plt
 import pandas as pd 
 import scipy.stats as stats
 
-loansData = pd.read_csv('https://spark-public.s3.amazonaws.com/dataanalysis/loansData.csv')
+web_site = 'https://spark-public.s3.amazonaws.com/dataanalysis/loansData.csv'
+
+loansData = pd.read_csv(web_site)
 
 #clean data by dropping na values
 loansData.dropna(inplace=True)
