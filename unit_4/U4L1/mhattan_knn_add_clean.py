@@ -1,3 +1,7 @@
+'''
+File #3, additional cleaning in order to run knn analysis.
+'''
+
 import pandas as pd
 sale_data = pd.read_csv('sale_data.csv')
 

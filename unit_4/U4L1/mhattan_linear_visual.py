@@ -1,3 +1,7 @@
+'''
+File #2, running linear regression on manhattan data.
+'''
+
 import pandas as pd
 import statsmodels.api as sm 
 import numpy as np

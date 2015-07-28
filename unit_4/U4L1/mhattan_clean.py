@@ -1,3 +1,7 @@
+'''
+File #1, Cleaning file in order to run linear regression.
+'''
+
 import pandas as pd
 import statsmodels.api as sm 
 import numpy as np

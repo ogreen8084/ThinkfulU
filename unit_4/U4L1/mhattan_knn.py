@@ -1,3 +1,6 @@
+'''
+File #4, Knn analysis.
+'''
 
 import pandas as pd
 from sklearn.cross_validation import train_test_split
