@@ -8,17 +8,20 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.cluster import KMeans
 import numpy as np
 
-sale_data = pd.read_csv('sale_data_knn.csv')
+sale_data = pd.read_csv('sale_data.csv')
+print list(sale_data.columns.values)
+print list(sale_data.dtypes)
 
+sale_data = sale_data.drop(['BUILDING_CLASS_CATEGORY'], axis = 1)
 
 #split data and set up independent and depe
 saleTrain, saleTest = train_test_split(sale_data, test_size = 0.2)
 
-saleTrain_ind = saleTrain.drop(['SALE_PRICE'], axis = 1)
-saleTrain_dep = saleTrain['SALE_PRICE']
+saleTrain_ind = saleTrain.drop(['NEIGHBORHOOD'], axis = 1)
+saleTrain_dep = saleTrain['NEIGHBORHOOD']
 
-saleTest_ind = saleTest.drop(['SALE_PRICE'], axis = 1)
-saleTest_dep = saleTest['SALE_PRICE']
+saleTest_ind = saleTest.drop(['NEIGHBORHOOD'], axis = 1)
+saleTest_dep = saleTest['NEIGHBORHOOD']
 
 #k-nn classification by k, 1-20
 predict_value = 1.0
